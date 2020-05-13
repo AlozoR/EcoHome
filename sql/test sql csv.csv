@@ -1,0 +1,24 @@
+1;PC portable;informatique;HP;0;;11
+2;PC portable;informatique;Lenovo noir;;;16
+3;PC portable;informatique;Lenovo gris  ;;;7,5
+4;PC portable;informatique;Lenovo IdeaPad 510-15ISK core i5 - 2,3 GHz - HDD 1 To - 8 Go - NVIDIA GeForce 940 MX;0,4;0,9;15
+5;Imprimante;informatique;HP Photosmart C4580;;6;14
+6;Imprimante;informatique;HP Deskjet 3520;;1,5;12
+7;Imprimante laser;informatique;Samsung ;;1,8;450
+8;Lave linge;électroménager;Siemens S14-38;;2,5;
+9;Four à micro ondes;cuisine;Severin;;;
+10;TV;TV et accessoires;Hannspree HSG 1112;;0;24
+11;TV;TV et accessoires;Selecline 22284;;0;15
+12;TV;TV et accessoires;Selecline LE-2419D;;0;19
+13;Caster TV;TV et accessoires;Google Chromecast 3;;;
+14;Box internet;équipement internet;Bbox;;;
+15;Décodeur TV;TV et accessoires;Bbox 4k;;4,5;7,5
+16;Répéteur Wifi;équipement internet;Netgear AC750 EX3800;;;
+17;Smartphone;smartphones et objets connectés;Sony Xperia XA1;3;3;5
+18;Smartphone;smartphones et objets connectés;Sony Xperia XA2;;;4
+19;Smartphone;smartphones et objets connectés;Nokia;;;
+20;Tablette;smartphones et objets connectés;Samsung Galaxy Tab A6;2,5;2,8;2,8
+21;Montre connectée;smartphones et objets connectés;Samsung Galaxy Watch Active;1,6;1,6;1,6
+22;Transformateur batterie;;chargeur Samsung Galaxy Watch active;;;1,1
+23;Console portable;console de jeux;Nintendo 3DS;4;4;5,5
+24;Prise connectée;smartphones et objets connectés;Tapo P100;0,45;;1,3
