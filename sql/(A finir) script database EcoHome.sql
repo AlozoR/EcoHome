@@ -3,7 +3,7 @@ CREATE DATABASE ecohome;
 USE ecohome;
 
 CREATE USER 'superuser'@'localhost' IDENTIFIED BY 'superuser';
-GRANT ALL PRIVILEGES ON ecohome.* TO 'testuser'@'localhost';
+GRANT ALL PRIVILEGES ON ecohome.* TO 'superuser'@'localhost';
 
 
 CREATE TABLE ecohome.offreelec
