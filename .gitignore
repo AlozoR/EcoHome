@@ -10,5 +10,6 @@ npm-debug.*
 web-build/
 web-report/
 .idea/
+sql/load_csv.sql
 # macOS
 .DS_Store
