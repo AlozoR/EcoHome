@@ -2,6 +2,9 @@ DROP DATABASE IF EXISTS ecohome;
 CREATE DATABASE ecohome;
 USE ecohome;
 
+CREATE USER 'superuser'@'localhost' IDENTIFIED BY 'superuser';
+GRANT ALL PRIVILEGES ON ecohome.* TO 'testuser'@'localhost';
+
 
 CREATE TABLE ecohome.offreelec
 (

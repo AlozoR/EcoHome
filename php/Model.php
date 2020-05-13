@@ -8,7 +8,7 @@ class Model
     private static function connexion()
     {
         try {
-            self::$pdo = new PDO('mysql:host=localhost;dbname=ecohome', 'root', 'root');
+            self::$pdo = new PDO('mysql:host=localhost;dbname=ecohome', 'superuser', 'superuser');
         } catch (PDOException $exp) {
             echo 'erreur de connexion au serveur';
         }
