@@ -16,3 +16,4 @@ if (isset($_REQUEST['mail'])) {
         print(json_encode($tab));
     }
 }
+
