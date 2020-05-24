@@ -2,15 +2,17 @@ import React from 'react';
 import { View } from 'react-native';
 
 import LoginForm from '../components/LoginForm';
+import CreateScreen from '../components/Test';
 
 class LoginScreen extends React.Component {
 	handleLoginFormSubmit = values => {
 		console.log(values);
 
-		this.props.navigation.navigate('Home');
+		// this.props.navigation.navigate('Home');
 	};
 
 	render() {
+
 		return (
 			<View>
 				<LoginForm onSubmit={this.handleLoginFormSubmit}/>

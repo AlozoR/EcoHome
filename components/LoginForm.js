@@ -1,11 +1,11 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, TextInput } from 'react-native';
 import { reduxForm, Field } from 'redux-form';
-import { Button, Text } from 'native-base';
+import { Button, Text, Input } from 'native-base';
 import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
 
-import TextInput from './TextInput';
+import MyTextInput from './MyTextInput';
 import { AppLoading } from 'expo';
 
 class LoginForm extends React.Component {
@@ -38,7 +38,7 @@ class LoginForm extends React.Component {
 					textContentType='emailAddress'
 					autoCorrect={false}
 					autoCapitalize='none'
-					component={TextInput}
+					component={MyTextInput}
 					icon='person'
 				/>
 				<Field
@@ -48,7 +48,7 @@ class LoginForm extends React.Component {
 					secureTextEntry={true}
 					autoCorrect={false}
 					autoCapitalize='none'
-					component={TextInput}
+					component={MyTextInput}
 					icon='key'
 				/>
 				<Button full warning rounded onPress={this.props.handleSubmit}>

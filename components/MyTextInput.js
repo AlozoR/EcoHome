@@ -7,7 +7,7 @@ import { AppLoading } from 'expo';
 
 import FieldWrapper from './FieldWrapper';
 
-class TextInput extends React.Component {
+class MyTextInput extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -26,6 +26,7 @@ class TextInput extends React.Component {
 
 	render() {
 		const { input, meta, label, ...inputProps } = this.props;
+		console.log(this.props);
 
 		if (!this.state.isReady) {
 			return <AppLoading/>;
@@ -64,4 +65,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default TextInput;
+export default MyTextInput;
