@@ -3,12 +3,12 @@
 
 class Model
 {
-    private static PDO $pdo;
+    private static $pdo;
 
     private static function connexion()
     {
         try {
-            self::$pdo = new PDO('mysql:host=localhost:3306;dbname=ecohome', 'superuser', 'superuser');
+            self::$pdo = new PDO('mysql:host=localhost;dbname=ecohome', 'superuser', 'superuser');
         } catch (PDOException $exp) {
             echo 'erreur de connexion au serveur';
         }
@@ -20,7 +20,7 @@ class Model
         if (Model::$pdo == null) {
             return null;
         } else {
-            $data = array(':mail' => $mail, 'mdp' => $mdp);
+            $data = array(':mail' => $mail, ':mdp' => $mdp);
             $requete = 'SELECT COUNT(*) AS nb, mail
                         FROM utilisateur
                         WHERE mail = :mail
@@ -62,6 +62,22 @@ class Model
                         VALUES (:mail, :password, :telephone);';
             $insert = self::$pdo->prepare($requete);
             $insert->execute($data);
+        }
+    }
+
+    public static function selectUtilisateur($mail)
+    {
+        self::connexion();
+        if (Model::$pdo == null) {
+            return null;
+        } else {
+            $data = array(':email' => $mail);
+            $requete = 'SELECT COUNT(*) AS nb
+                        FROM utilisateur
+                        WHERE mail = :mail';
+            $select = self::$pdo->prepare($requete);
+            $select->execute($data);
+            return $select->fetch();
         }
     }
 }

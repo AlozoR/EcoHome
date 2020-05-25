@@ -1,12 +1,13 @@
 import React from 'react';
-import { View, TextInput } from 'react-native';
+import { View } from 'react-native';
 import { reduxForm, Field } from 'redux-form';
-import { Button, Text, Input } from 'native-base';
+import { Button, Text } from 'native-base';
 import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
 
 import MyTextInput from './MyTextInput';
 import { AppLoading } from 'expo';
+import { required, email } from './utility/validate';
 
 class LoginForm extends React.Component {
 	constructor(props) {
@@ -30,6 +31,8 @@ class LoginForm extends React.Component {
 			return <AppLoading/>;
 		}
 
+		console.log(this.props);
+
 		return (
 			<View>
 				<Field
@@ -38,6 +41,7 @@ class LoginForm extends React.Component {
 					textContentType='emailAddress'
 					autoCorrect={false}
 					autoCapitalize='none'
+					validate={[required/*, email*/]}
 					component={MyTextInput}
 					icon='person'
 				/>
@@ -48,6 +52,7 @@ class LoginForm extends React.Component {
 					secureTextEntry={true}
 					autoCorrect={false}
 					autoCapitalize='none'
+					validate={[required]}
 					component={MyTextInput}
 					icon='key'
 				/>

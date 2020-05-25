@@ -5,7 +5,7 @@
       <paths name="ecohome">
         <serverdata>
           <mappings>
-            <mapping deploy="/ecohome" local="$PROJECT_DIR$/php" web="/ecohome" />
+            <mapping deploy="/ecohome" local="$PROJECT_DIR$/api/php" web="/ecohome" />
           </mappings>
         </serverdata>
       </paths>

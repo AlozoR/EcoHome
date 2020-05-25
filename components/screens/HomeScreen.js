@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, TextInput } from 'react-native';
 import { Input, Form } from 'native-base';
 
-import FieldWrapper from '../components/FieldWrapper';
+import FieldWrapper from '../forms/FieldWrapper';
 
 class HomeScreen extends React.Component {
 	render() {
