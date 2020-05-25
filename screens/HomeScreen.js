@@ -9,7 +9,7 @@ class HomeScreen extends React.Component {
 		return (
 			<View>
 				<View style={{ flex: 1 }}>
-					<Text>Je suis connecté</Text>
+					<Text>{this.props.route.params.user} est connecté</Text>
 				</View>
 				<View style={{ flex: 1 }}>
 					<TextInput placeholder='test'/>

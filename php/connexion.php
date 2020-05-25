@@ -2,7 +2,7 @@
 require_once('Model.php');
 if (isset($_REQUEST['mail']) and isset($_REQUEST['mdp'])) {
     $mail = $_REQUEST['mail'];
-    $mdp = $_REQUEST['mdp'];
+    $mdp = hash('md5', $_REQUEST['mdp']);
     $resultat = Model::verifConnexion($mail, $mdp);
     if ($resultat == null) {
         print('[]');

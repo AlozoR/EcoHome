@@ -14,7 +14,7 @@ class FieldWrapper extends React.Component {
 	}
 
 	async componentDidMount() {
-		console.log(this.props.children.props);
+		// console.log(this.props.children.props);
 		await Font.loadAsync({
 			'Roboto': require('native-base/Fonts/Roboto.ttf'),
 			'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
