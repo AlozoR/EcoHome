@@ -31,20 +31,32 @@ class SignUpForm extends React.Component {
 			return <AppLoading/>;
 		}
 
+		const { error } = this.props;
+
 		return (
 			<View>
 				<Field
-					name='login'
+					name='mail'
 					label='Email'
 					textContentType='emailAddress'
 					autoCorrect={false}
 					autoCapitalize='none'
-					validate={[required/*, email*/]}
+					validate={[required, email]}
 					component={MyTextInput}
-					icon='person'
+					icon='at'
 				/>
 				<Field
-					name='password'
+					name='tel'
+					label='Téléphone'
+					textContentType='telephoneNumber'
+					autoCorrect={false}
+					autoCapitalize='none'
+					validate={[required]}
+					component={MyTextInput}
+					icon='phone-portrait'
+				/>
+				<Field
+					name='mdp'
 					label='Mot de passe'
 					textContentType='password'
 					secureTextEntry={true}
@@ -55,7 +67,7 @@ class SignUpForm extends React.Component {
 					icon='key'
 				/>
 				<Field
-					name='password_confirm'
+					name='mdp_confirm'
 					label='Mot de passe'
 					textContentType='password'
 					secureTextEntry={true}
@@ -65,8 +77,9 @@ class SignUpForm extends React.Component {
 					component={MyTextInput}
 					icon='key'
 				/>
+				{error && <Text>{error}</Text>}
 				<Button full warning rounded onPress={this.props.handleSubmit}>
-					<Text>S'inscrire</Text>
+					<Text>{'S\'inscrire'}</Text>
 				</Button>
 			</View>
 		);

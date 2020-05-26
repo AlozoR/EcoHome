@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { reduxForm, Field } from 'redux-form';
+import { reduxForm, Field, SubmissionError } from 'redux-form';
 import { Button, Text } from 'native-base';
 import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
@@ -31,7 +31,10 @@ class LoginForm extends React.Component {
 			return <AppLoading/>;
 		}
 
-		console.log(this.props);
+		const { error } = this.props;
+
+		// console.log(this.props.handleSubmit);
+		// console.log(this.props.onSubmit);
 
 		return (
 			<View>
@@ -43,7 +46,7 @@ class LoginForm extends React.Component {
 					autoCapitalize='none'
 					validate={[required/*, email*/]}
 					component={MyTextInput}
-					icon='person'
+					icon='at'
 				/>
 				<Field
 					name='password'
@@ -56,6 +59,7 @@ class LoginForm extends React.Component {
 					component={MyTextInput}
 					icon='key'
 				/>
+				{error && <Text>{error}</Text>}
 				<Button full warning rounded onPress={this.props.handleSubmit}>
 					<Text>Connexion</Text>
 				</Button>

@@ -6,7 +6,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { AppLoading } from 'expo';
 
 import SignUpForm from '../forms/SignUpForm';
-import { inscription, existenceUtilisateur } from '../../api/api';
+import { inscription, existenceMail, existenceTel } from '../../api/api';
+import { SubmissionError } from 'redux-form';
 
 class SignUpScreen extends React.Component {
 	constructor(props) {
@@ -27,8 +28,27 @@ class SignUpScreen extends React.Component {
 	}
 
 	handleSignInFormSubmit = values => {
+		console.log(values);
+		return existenceMail(values.mail)
+			.then(data => {
+				console.log(data);
+				const nbUser = data.nb;
+				console.log(nbUser);
+				if (parseInt(nbUser) >= 1) {
+					throw new SubmissionError({ mail: 'Email déjà enregistré' });
+				}
 
+				return existenceTel(values.tel)
+					.then(data => {
+						const nbUser = data.nb;
+						if (parseInt(nbUser) >= 1) {
+							throw new SubmissionError({ tel: 'Téléphone déjà enregistré' });
+						}
+						inscription(values);
+						this.props.navigation.navigate('Login');
 
+					});
+			});
 	};
 
 	render() {
@@ -39,7 +59,7 @@ class SignUpScreen extends React.Component {
 
 		return (
 			<View>
-				<SignUpForm onSubmit={this.handleSignInFormSubmit}/>
+				<SignUpForm onSubmit={this.handleSignInFormSubmit.bind(this)}/>
 			</View>
 		);
 	}

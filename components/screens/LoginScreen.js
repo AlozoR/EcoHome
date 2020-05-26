@@ -35,8 +35,8 @@ class LoginScreen extends React.Component {
 				this.user = data[0];
 
 				if (this.user.nb === '0') {
-					console.log('Connexion echouée');
-					throw new SubmissionError({ username: 'erreur', _error: 'Connexion échouée' });
+					// console.log('Connexion echouée');
+					throw new SubmissionError({ _error: 'Connexion échouée' });
 				} else {
 					this.props.navigation.navigate('Home', { user: this.user.mail });
 				}
@@ -49,16 +49,17 @@ class LoginScreen extends React.Component {
 	};
 
 	render() {
-		// console.log('test2');
 		if (!this.state.isReady) {
 			return <AppLoading/>;
 		}
+
+		// const { handleSubmit } = this.props.children;
 
 		// console.log(this.props.children);
 
 		return (
 			<View>
-				<LoginForm onSubmit={this.handleLoginFormSubmit}/>
+				<LoginForm onSubmit={this.handleLoginFormSubmit.bind(this)}/>
 				<View>
 					<Button
 						full
