@@ -4,6 +4,7 @@ import { Button, Text } from 'native-base';
 import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
 import { AppLoading } from 'expo';
+import { connect } from 'react-redux';
 import { SubmissionError } from 'redux-form';
 
 import LoginForm from '../forms/LoginForm';
@@ -28,7 +29,7 @@ class LoginScreen extends React.Component {
 	}
 
 	handleLoginFormSubmit = values => {
-		// console.log(values);
+		//console.log(values);
 
 		return verifLogin(values)
 			.then(data => {
@@ -38,7 +39,10 @@ class LoginScreen extends React.Component {
 					// console.log('Connexion echouée');
 					throw new SubmissionError({ _error: 'Connexion échouée' });
 				} else {
-					this.props.navigation.navigate('Home', { user: this.user.mail });
+					// console.log(this.user);
+					const action = { type: 'LOG_USER', value: this.user.mail };
+					this.props.dispatch(action);
+					this.props.navigation.navigate('Home');
 				}
 			});
 	};
@@ -74,4 +78,8 @@ class LoginScreen extends React.Component {
 	}
 }
 
-export default LoginScreen;
+const mapStateToProps = state => ({
+	user: state.log.user,
+});
+
+export default connect()(LoginScreen);

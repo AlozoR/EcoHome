@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'react-redux';
 
 import store from './store/configureStore';
+import { UserContext } from './context/userContext';
 
 import Navigation from './navigation/Navigation';
 

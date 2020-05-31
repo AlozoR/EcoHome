@@ -31,3 +31,7 @@ export function existenceTel(tel) {
 		.then((response) => response.json())
 		.catch((error) => console.log(error));
 }
+
+export function listUtilisation() {
+
+}

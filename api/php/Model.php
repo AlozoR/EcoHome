@@ -38,11 +38,16 @@ class Model
 			return null;
 		} else {
 			$data = array(':mail' => $mail);
-			$requete = 'SELECT *
-                        FROM appareil 
-                            JOIN utilisation ut ON appareil.id_appareil = ut.id_appareil
-                            JOIN utilisateur u ON ut.mail = u.mail
-                        WHERE u.mail = :mail;';
+			$requete = 'SELECT a.id_appareil,
+						       a.categorie,
+						       a.genre,
+						       a.ref_appareil,
+						       a.conso_veille
+                        FROM utilisation ut,
+                             appareil a
+                            	 JOIN utilisateur u ON mail = u.mail
+                        WHERE u.mail = :mail
+						  AND a.id_appareil = ut.id_appareil;';
 			$select = self::$pdo->prepare($requete);
 			$select->execute($data);
 			return $select->fetchAll();
