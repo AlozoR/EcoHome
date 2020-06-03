@@ -7,6 +7,8 @@ import { Ionicons } from '@expo/vector-icons';
 import HomeScreen from '../components/screens/HomeScreen';
 import LoginScreen from '../components/screens/LoginScreen';
 import SignUpScreen from '../components/screens/SignUpScreen';
+import ListScreen from '../components/screens/ListScreen';
+import NewApplianceScreen from '../components/screens/NewApplianceScreen';
 
 const Stack = createStackNavigator();
 
@@ -37,6 +39,11 @@ function MainStackNavigator() {
 					options={{
 						title: 'SignUp',
 					}}/>
+				<Stack.Screen
+					name='NewAppliance' component={NewApplianceScreen}
+					options={{
+						title: 'NewAppliance',
+					}}/>
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
@@ -61,7 +68,7 @@ function HomeTabNavigator() {
 			/>
 			<Tab.Screen
 				name='DevicesList'
-				component={HomeScreen}
+				component={ListScreen}
 				options={{
 					tabBarIcon: () => <Ionicons
 						name='md-list'

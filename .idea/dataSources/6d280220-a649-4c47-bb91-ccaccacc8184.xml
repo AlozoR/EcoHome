@@ -905,288 +905,391 @@
       <Host>localhost</Host>
     </user>
     <table id="287" parent="3" name="appareil"/>
-    <table id="288" parent="3" name="offreelec"/>
-    <table id="289" parent="3" name="operateur"/>
-    <table id="290" parent="3" name="prix"/>
-    <table id="291" parent="3" name="prix_offre"/>
-    <table id="292" parent="3" name="type_appareil"/>
-    <table id="293" parent="3" name="utilisateur"/>
-    <table id="294" parent="3" name="utilisation"/>
-    <column id="295" parent="287" name="id_appareil">
+    <table id="288" parent="3" name="economies_mois"/>
+    <table id="289" parent="3" name="offreelec"/>
+    <table id="290" parent="3" name="operateur"/>
+    <table id="291" parent="3" name="prix"/>
+    <table id="292" parent="3" name="prix_offre"/>
+    <table id="293" parent="3" name="type_appareil"/>
+    <table id="294" parent="3" name="utilisateur"/>
+    <table id="295" parent="3" name="utilisation"/>
+    <column id="296" parent="287" name="id_appareil">
       <Position>1</Position>
       <DataType>varchar(8)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="296" parent="287" name="genre">
+    <column id="297" parent="287" name="genre">
       <Position>2</Position>
       <DataType>varchar(32)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="297" parent="287" name="categorie">
+    <column id="298" parent="287" name="categorie">
       <Position>3</Position>
       <DataType>enum(&apos;électroménager&apos;, &apos;cuisine&apos;, &apos;informatique&apos;, &apos;smartphones et objets connectés&apos;, &apos;équipement internet&apos;, &apos;TV et accessoires&apos;, &apos;console de jeux&apos;, &apos;bricolage&apos;, &apos;autre&apos;)|0e</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="298" parent="287" name="marque">
+    <column id="299" parent="287" name="marque">
       <Position>4</Position>
       <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="299" parent="287" name="ref_appareil">
+    <column id="300" parent="287" name="ref_appareil">
       <Position>5</Position>
       <DataType>varchar(128)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="300" parent="287" name="date_ajout">
+    <column id="301" parent="287" name="date_ajout">
       <Position>6</Position>
       <DataType>date|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="301" parent="287" name="conso_eteint">
+    <column id="302" parent="287" name="conso_eteint">
       <Position>7</Position>
       <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="302" parent="287" name="conso_veille">
+    <column id="303" parent="287" name="conso_veille">
       <Position>8</Position>
       <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="303" parent="287" name="conso_marche">
+    <column id="304" parent="287" name="conso_marche">
       <Position>9</Position>
       <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="304" parent="287" name="genre_appa">
+    <index id="305" parent="287" name="genre_appa">
       <ColNames>genre</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="305" parent="287" name="PRIMARY">
+    <key id="306" parent="287" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_appareil</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="306" parent="287" name="genre_appa">
+    <foreign-key id="307" parent="287" name="genre_appa">
       <ColNames>genre</ColNames>
       <RefTableName>type_appareil</RefTableName>
       <RefColNames>genre</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="307" parent="288" name="nom_offre">
-      <Position>1</Position>
-      <DataType>varchar(32)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="308" parent="288" name="descriptif">
-      <Position>2</Position>
-      <DataType>varchar(256)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="309" parent="288" name="nom_operateur">
-      <Position>3</Position>
-      <DataType>varchar(16)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="310" parent="288" name="nom_operateur_offr">
-      <ColNames>nom_operateur</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="311" parent="288" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>nom_offre</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="312" parent="288" name="nom_operateur_offr">
-      <ColNames>nom_operateur</ColNames>
-      <RefTableName>operateur</RefTableName>
-      <RefColNames>nom_operateur</RefColNames>
-      <OnDelete>cascade</OnDelete>
-    </foreign-key>
-    <column id="313" parent="289" name="nom_operateur">
-      <Position>1</Position>
-      <DataType>varchar(32)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="314" parent="289" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>nom_operateur</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="315" parent="290" name="montant_kwh">
-      <Position>1</Position>
-      <DataType>float|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="316" parent="290" name="description">
-      <Position>2</Position>
-      <DataType>varchar(256)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="317" parent="290" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>montant_kwh</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="318" parent="291" name="montant_kwh">
-      <Position>1</Position>
-      <DataType>float|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="319" parent="291" name="nom_offre">
-      <Position>2</Position>
-      <DataType>varchar(32)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="320" parent="291" name="nom_offre_prix_offr">
-      <ColNames>nom_offre</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="321" parent="291" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>montant_kwh
-nom_offre</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="322" parent="291" name="montant_kwh_prix">
-      <ColNames>montant_kwh</ColNames>
-      <RefTableName>prix</RefTableName>
-      <RefColNames>montant_kwh</RefColNames>
-      <OnDelete>cascade</OnDelete>
-    </foreign-key>
-    <foreign-key id="323" parent="291" name="nom_offre_prix_offr">
-      <ColNames>nom_offre</ColNames>
-      <RefTableName>offreelec</RefTableName>
-      <RefColNames>nom_offre</RefColNames>
-      <OnDelete>cascade</OnDelete>
-    </foreign-key>
-    <column id="324" parent="292" name="genre">
-      <Position>1</Position>
-      <DataType>varchar(32)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="325" parent="292" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>genre</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="326" parent="293" name="mail">
-      <Position>1</Position>
-      <DataType>varchar(32)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="327" parent="293" name="mdp">
-      <Position>2</Position>
-      <DataType>varchar(32)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="328" parent="293" name="tel">
-      <Position>3</Position>
-      <DataType>varchar(16)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="329" parent="293" name="age">
-      <Position>4</Position>
-      <DataType>int|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="330" parent="293" name="sexe">
-      <Position>5</Position>
-      <DataType>enum(&apos;M&apos;, &apos;F&apos;)|0e</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="331" parent="293" name="date_inscription">
-      <Position>6</Position>
-      <DataType>datetime|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="332" parent="293" name="nom_offre">
-      <Position>7</Position>
-      <DataType>varchar(32)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="333" parent="293" name="nom_offre_user">
-      <ColNames>nom_offre</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="334" parent="293" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>mail</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="335" parent="293" name="nom_offre_user">
-      <ColNames>nom_offre</ColNames>
-      <RefTableName>offreelec</RefTableName>
-      <RefColNames>nom_offre</RefColNames>
-      <OnDelete>cascade</OnDelete>
-    </foreign-key>
-    <column id="336" parent="294" name="jour">
+    <column id="308" parent="288" name="mois">
       <Position>1</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="337" parent="294" name="horaire_debut">
+    <column id="309" parent="288" name="economies">
       <Position>2</Position>
-      <DataType>time|0s</DataType>
+      <DataType>float|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="338" parent="294" name="horaire_fin">
+    <column id="310" parent="288" name="mail">
+      <Position>3</Position>
+      <DataType>varchar(32)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="311" parent="288" name="mail_econ">
+      <ColNames>mail</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="312" parent="288" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>mois
+mail</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="313" parent="288" name="mail_econ">
+      <ColNames>mail</ColNames>
+      <RefTableName>utilisateur</RefTableName>
+      <RefColNames>mail</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="314" parent="289" name="nom_offre">
+      <Position>1</Position>
+      <DataType>varchar(32)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="315" parent="289" name="descriptif">
+      <Position>2</Position>
+      <DataType>varchar(256)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="316" parent="289" name="nom_operateur">
+      <Position>3</Position>
+      <DataType>varchar(16)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="317" parent="289" name="nom_operateur_offr">
+      <ColNames>nom_operateur</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="318" parent="289" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>nom_offre
+nom_operateur</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="319" parent="289" name="nom_operateur_offr">
+      <ColNames>nom_operateur</ColNames>
+      <RefTableName>operateur</RefTableName>
+      <RefColNames>nom_operateur</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="320" parent="290" name="nom_operateur">
+      <Position>1</Position>
+      <DataType>varchar(32)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="321" parent="290" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>nom_operateur</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="322" parent="291" name="montant_kwh">
+      <Position>1</Position>
+      <DataType>float|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="323" parent="291" name="puissance_compteur">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="324" parent="291" name="puissance_compteur">
+      <ColNames>puissance_compteur</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="325" parent="291" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>montant_kwh
+puissance_compteur</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="326" parent="292" name="montant_kwh">
+      <Position>1</Position>
+      <DataType>float|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="327" parent="292" name="puissance_compteur">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="328" parent="292" name="nom_offre">
+      <Position>3</Position>
+      <DataType>varchar(32)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="329" parent="292" name="nom_operateur">
+      <Position>4</Position>
+      <DataType>varchar(32)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="330" parent="292" name="puissance_compteur_prix_offr">
+      <ColNames>puissance_compteur</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="331" parent="292" name="nom_offre_prix_offr">
+      <ColNames>nom_offre</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="332" parent="292" name="nom_operateur_prix_offr">
+      <ColNames>nom_operateur</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="333" parent="292" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>montant_kwh
+puissance_compteur
+nom_offre</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="334" parent="292" name="montant_kwh_prix_offr">
+      <ColNames>montant_kwh</ColNames>
+      <RefTableName>prix</RefTableName>
+      <RefColNames>montant_kwh</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="335" parent="292" name="puissance_compteur_prix_offr">
+      <ColNames>puissance_compteur</ColNames>
+      <RefTableName>prix</RefTableName>
+      <RefColNames>puissance_compteur</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="336" parent="292" name="nom_offre_prix_offr">
+      <ColNames>nom_offre</ColNames>
+      <RefTableName>offreelec</RefTableName>
+      <RefColNames>nom_offre</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="337" parent="292" name="nom_operateur_prix_offr">
+      <ColNames>nom_operateur</ColNames>
+      <RefTableName>offreelec</RefTableName>
+      <RefColNames>nom_operateur</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="338" parent="293" name="genre">
+      <Position>1</Position>
+      <DataType>varchar(32)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="339" parent="293" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>genre</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="340" parent="294" name="mail">
+      <Position>1</Position>
+      <DataType>varchar(32)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="341" parent="294" name="mdp">
+      <Position>2</Position>
+      <DataType>varchar(32)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="342" parent="294" name="tel">
+      <Position>3</Position>
+      <DataType>varchar(16)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="343" parent="294" name="age">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="344" parent="294" name="sexe">
+      <Position>5</Position>
+      <DataType>enum(&apos;M&apos;, &apos;F&apos;)|0e</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="345" parent="294" name="puissance_compteur">
+      <Position>6</Position>
+      <DataType>int|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="346" parent="294" name="date_inscription">
+      <Position>7</Position>
+      <DataType>datetime|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="347" parent="294" name="nom_offre">
+      <Position>8</Position>
+      <DataType>varchar(32)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="348" parent="294" name="nom_operateur">
+      <Position>9</Position>
+      <DataType>varchar(32)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="349" parent="294" name="nom_offre_user">
+      <ColNames>nom_offre</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="350" parent="294" name="nom_operateur_user">
+      <ColNames>nom_operateur</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="351" parent="294" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>mail</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="352" parent="294" name="nom_offre_user">
+      <ColNames>nom_offre</ColNames>
+      <RefTableName>offreelec</RefTableName>
+      <RefColNames>nom_offre</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="353" parent="294" name="nom_operateur_user">
+      <ColNames>nom_operateur</ColNames>
+      <RefTableName>offreelec</RefTableName>
+      <RefColNames>nom_operateur</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="354" parent="295" name="id_utilisation">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="355" parent="295" name="jour">
+      <Position>2</Position>
+      <DataType>enum(&apos;lundi&apos;, &apos;mardi&apos;, &apos;mercredi&apos;, &apos;jeudi&apos;, &apos;vendredi&apos;, &apos;samedi&apos;, &apos;dimanche&apos;)|0e</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="356" parent="295" name="horaire_debut">
       <Position>3</Position>
       <DataType>time|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="339" parent="294" name="id_appareil">
+    <column id="357" parent="295" name="horaire_fin">
       <Position>4</Position>
+      <DataType>time|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="358" parent="295" name="economie">
+      <Position>5</Position>
+      <DataType>float|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="359" parent="295" name="id_appareil">
+      <Position>6</Position>
       <DataType>varchar(8)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="340" parent="294" name="mail">
-      <Position>5</Position>
+    <column id="360" parent="295" name="mail">
+      <Position>7</Position>
       <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="341" parent="294" name="id_appareil_util">
+    <index id="361" parent="295" name="id_appareil_util">
       <ColNames>id_appareil</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="342" parent="294" name="mail_util">
+    <index id="362" parent="295" name="mail_util">
       <ColNames>mail</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="343" parent="294" name="PRIMARY">
+    <key id="363" parent="295" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>jour
-horaire_debut
-horaire_fin
-id_appareil
-mail</ColNames>
+      <ColNames>id_utilisation</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="344" parent="294" name="id_appareil_util">
+    <foreign-key id="364" parent="295" name="id_appareil_util">
       <ColNames>id_appareil</ColNames>
       <RefTableName>appareil</RefTableName>
       <RefColNames>id_appareil</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="345" parent="294" name="mail_util">
+    <foreign-key id="365" parent="295" name="mail_util">
       <ColNames>mail</ColNames>
       <RefTableName>utilisateur</RefTableName>
       <RefColNames>mail</RefColNames>

@@ -9,6 +9,8 @@ if (isset($_REQUEST['mail']) and isset($_REQUEST['mdp'])) {
         print('[]');
     } else {
         $tab[] = array('nb' => $resultat['nb'], 'mail' => $resultat['mail']);
-        print(json_encode($tab));
+	    $json_string = json_encode($tab, JSON_PRETTY_PRINT);
+	    header('Content-Type: application/json');
+	    echo $json_string;
     }
 }

@@ -7,7 +7,9 @@ if (isset($_REQUEST['mail'])) {
 		print('[]');
 	} else {
 		$tab = array('nb' => $resultat['nb']);
-		print(json_encode($tab));
+		$json_string = json_encode($tab, JSON_PRETTY_PRINT);
+		header('Content-Type: application/json');
+		echo $json_string;
 	}
 }
 
@@ -18,6 +20,8 @@ if (isset($_REQUEST['tel'])) {
 		print('[]');
 	} else {
 		$tab = array('nb' => $resultat['nb']);
-		print(json_encode($tab));
+		$json_string = json_encode($tab, JSON_PRETTY_PRINT);
+		header('Content-Type: application/json');
+		echo $json_string;
 	}
 }

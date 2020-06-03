@@ -8,12 +8,15 @@ if (isset($_REQUEST['mail'])) {
     } else {
         $tab = array();
         foreach ($resultat as $unRes) {
-            $tab[] = array('id_appareil' => $resultat['id_appareil'], 'genre' => $resultat['genre'],
-                'categorie' => $resultat['categorie'], 'ref_appareil' => $resultat['ref_appareil'],
-                'conso_veille' => $resultat['conso_veille'], 'conso_marche' => $resultat['conso_marche'],
-                'conso_eteint' => $resultat['conso_eteint']);
+            $tab[] = array('id_appareil' => $unRes['id_appareil'],
+	            'categorie' => $unRes['categorie'],
+	            'genre' => $unRes['genre'],
+	            'ref_appareil' => $unRes['ref_appareil'],
+                'conso_veille' => $unRes['conso_veille']);
         }
-        print(json_encode($tab));
+        $json_string = json_encode($tab, JSON_PRETTY_PRINT);
+	    header('Content-Type: application/json');
+        echo $json_string;
     }
 }
 
