@@ -277,4 +277,41 @@ class Model
 			return $select->fetchAll();
 		}
 	}
+
+	public static function insertUtilisation($tab)
+	{
+		self::connexion();
+		if (Model::$pdo == null) {
+			return null;
+		} else {
+			$data = array(
+				':jour' => $tab['jour'],
+				':horaire_debut' => $tab['horaire_debut'],
+				':horaire_fin' => $tab['horaire_fin'],
+				':economie' => $tab['economie'],
+				':id_appareil' => $tab['id_appareil'],
+				':mail' => $tab['mail']);
+			$requete = 'INSERT INTO utilisation
+                        (jour, horaire_debut, horaire_fin, economie, id_appareil, mail)
+                        VALUES (:jour, :horaire_debut, :horaire_fin, :economie, :id_appareil, :mail);';
+			$insert = self::$pdo->prepare($requete);
+			$insert->execute($data);
+		}
+	}
+
+	public static function selectConsoAppareil($id_appareil)
+	{
+		self::connexion();
+		if (Model::$pdo == null) {
+			return null;
+		} else {
+			$data = array(':id_appareil' => $id_appareil);
+			$requete = 'SELECT a.conso_veille
+						FROM appareil a
+						WHERE id_appareil = :id_appareil;';
+			$select = self::$pdo->prepare($requete);
+			$select->execute($data);
+			return $select->fetch();
+		}
+	}
 }

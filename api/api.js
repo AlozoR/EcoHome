@@ -110,3 +110,23 @@ export function listAppareilsGenre(genre) {
 		.then((response) => response.json())
 		.catch((error) => console.error(error));
 }
+
+export function nouvelleUtilisation(jour, data) {
+	const url = 'http://192.168.1.83/ecohome/nouvelleUtilisation.php' +
+		`?jour=${jour}` +
+		`&horaire_debut=${data.horaire_debut}` +
+		`&horaire_fin=${data.horaire_fin}` +
+		`&economie=${data.economie}` +
+		`&id_appareil=${data.id_appareil}` +
+		`&mail=${data.mail}`;
+	fetch(url)
+		.catch((error) => console.error(error));
+}
+
+export function consoAppareil(id_appareil) {
+	const url = 'http://192.168.1.83/ecohome/consoAppareil.php' +
+		`?id_appareil=${id_appareil}`;
+	return fetch(url)
+		.then((response) => response.json())
+		.catch((error) => console.error(error));
+}

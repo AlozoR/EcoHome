@@ -213,32 +213,32 @@ VALUES (0.1632, 9, 'Vert Électrique base', 'EDF');
 
 
 INSERT INTO ecohome.utilisateur
-VALUES ('fion@fion.fion', '6a5bca8b119338e70777a85250c4ac5c', '00', 25, 'M', 6, CURDATE(), 'Vert Électrique base',
+VALUES ('adresse@mail.com', '6a5bca8b119338e70777a85250c4ac5c', '00', 25, 'M', 6, CURDATE(), 'Vert Électrique base',
         'EDF');
 
 
-INSERT INTO ecohome.utilisation (jour, horaire_debut, horaire_fin, economie, id_appareil, mail)
-VALUES ('lundi', '00:45:00', '01:45:00', '0.1', '4', 'fion@fion.fion');
+# INSERT INTO ecohome.utilisation (jour, horaire_debut, horaire_fin, economie, id_appareil, mail)
+# VALUES ('lundi', '00:45:00', '01:45:00', '0.1', '4', 'adresse@mail.com');
+#
+# INSERT INTO ecohome.utilisation (jour, horaire_debut, horaire_fin, economie, id_appareil, mail)
+# VALUES ('lundi', '04:45:00', '05:45:00', '0.1', '4', 'adresse@mail.com');
+#
+# INSERT INTO ecohome.utilisation (jour, horaire_debut, horaire_fin, economie, id_appareil, mail)
+# VALUES ('lundi', '00:45:00', '01:45:00', '0.1', '5', 'adresse@mail.com');
+#
+# INSERT INTO ecohome.utilisation (jour, horaire_debut, horaire_fin, economie, id_appareil, mail)
+# VALUES ('mardi', '00:45:00', '01:45:00', '0.1', '5', 'adresse@mail.com');
+#
+# INSERT INTO ecohome.utilisation (jour, horaire_debut, horaire_fin, economie, id_appareil, mail)
+# VALUES ('mercredi', '00:45:00', '01:45:00', '0.1', '5', 'adresse@mail.com');
+#
+# INSERT INTO ecohome.utilisation (jour, horaire_debut, horaire_fin, economie, id_appareil, mail)
+# VALUES ('jeudi', '00:45:00', '01:45:00', '0.1', '5', 'adresse@mail.com');
 
-INSERT INTO ecohome.utilisation (jour, horaire_debut, horaire_fin, economie, id_appareil, mail)
-VALUES ('lundi', '04:45:00', '05:45:00', '0.1', '4', 'fion@fion.fion');
-
-INSERT INTO ecohome.utilisation (jour, horaire_debut, horaire_fin, economie, id_appareil, mail)
-VALUES ('lundi', '00:45:00', '01:45:00', '0.1', '5', 'fion@fion.fion');
-
-INSERT INTO ecohome.utilisation (jour, horaire_debut, horaire_fin, economie, id_appareil, mail)
-VALUES ('mardi', '00:45:00', '01:45:00', '0.1', '5', 'fion@fion.fion');
-
-INSERT INTO ecohome.utilisation (jour, horaire_debut, horaire_fin, economie, id_appareil, mail)
-VALUES ('mercredi', '00:45:00', '01:45:00', '0.1', '5', 'fion@fion.fion');
-
-INSERT INTO ecohome.utilisation (jour, horaire_debut, horaire_fin, economie, id_appareil, mail)
-VALUES ('jeudi', '00:45:00', '01:45:00', '0.1', '5', 'fion@fion.fion');
-
-
-INSERT INTO ecohome.economies_mois
-VALUES ('2020-05-01', 12.5, 'fion@fion.fion');
 
 INSERT INTO ecohome.economies_mois
-VALUES ('2020-04-01', 11.2, 'fion@fion.fion');
+VALUES ('2020-05-01', 12.5, 'adresse@mail.com');
+
+INSERT INTO ecohome.economies_mois
+VALUES ('2020-04-01', 11.2, 'adresse@mail.com');
 

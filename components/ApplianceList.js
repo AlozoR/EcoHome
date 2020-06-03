@@ -10,12 +10,12 @@ class ApplianceList extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			isReady: false,
+			isReady: true,
 		};
 	}
 
 	componentDidMount() {
-		this._offreElec();
+		// this._offreElec();
 	}
 
 	_offreElec = () => {
@@ -35,7 +35,7 @@ class ApplianceList extends React.Component {
 					renderItem={({ item }) =>
 						<ApplianceItem
 							appliance={item}
-							montant_kwh={this.montant_kwh}
+							montant_kwh={this.props.montant_kwh}
 						/>
 					}
 				/>

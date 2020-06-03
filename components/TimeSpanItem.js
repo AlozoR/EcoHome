@@ -46,46 +46,60 @@ class TimeSpanItem extends React.Component {
 				<View style={styles.mainContainer}>
 					<View style={styles.contentView}>
 						<Text style={styles.timeSpanText}>
-							<Text style={{ ...styles.reccurenceText,
+							<Text style={{
+								...styles.recurrenceText,
 								color: this.jours.lundi === '0'
 									? colors.grey
-									: colors.darkGreen }}>
+									: colors.darkGreen,
+							}}>
 								L{' '}
 							</Text>
-							<Text style={{ ...styles.reccurenceText,
+							<Text style={{
+								...styles.recurrenceText,
 								color: this.jours.mardi === '0'
 									? colors.grey
-									: colors.darkGreen }}>
+									: colors.darkGreen,
+							}}>
 								M{' '}
 							</Text>
-							<Text style={{ ...styles.reccurenceText,
+							<Text style={{
+								...styles.recurrenceText,
 								color: this.jours.mercredi === '0'
 									? colors.grey
-									: colors.darkGreen }}>
+									: colors.darkGreen,
+							}}>
 								M{' '}
 							</Text>
-							<Text style={{ ...styles.reccurenceText,
+							<Text style={{
+								...styles.recurrenceText,
 								color: this.jours.jeudi === '0'
 									? colors.grey
-									: colors.darkGreen }}>
+									: colors.darkGreen,
+							}}>
 								J{' '}
 							</Text>
-							<Text style={{ ...styles.reccurenceText,
+							<Text style={{
+								...styles.recurrenceText,
 								color: this.jours.vendredi === '0'
 									? colors.grey
-									: colors.darkGreen }}>
+									: colors.darkGreen,
+							}}>
 								V{' '}
 							</Text>
-							<Text style={{ ...styles.reccurenceText,
+							<Text style={{
+								...styles.recurrenceText,
 								color: this.jours.samedi === '0'
 									? colors.grey
-									: colors.darkGreen }}>
+									: colors.darkGreen,
+							}}>
 								S{' '}
 							</Text>
-							<Text style={{ ...styles.reccurenceText,
+							<Text style={{
+								...styles.recurrenceText,
 								color: this.jours.dimanche === '0'
 									? colors.grey
-									: colors.darkGreen }}>
+									: colors.darkGreen,
+							}}>
 								D
 							</Text>
 						</Text>
@@ -116,7 +130,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		alignItems: 'center',
 	},
-	reccurenceText: {
+	recurrenceText: {
 		fontFamily: 'CircularStd-Black',
 		fontSize: 12,
 	},
